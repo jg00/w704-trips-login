@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    
+
+    <title>Trips</title>
+</head>
+<body>
+    <header>
+        <h2>Your Trips</h2>
+    </header>
+
+    <div id="divAddTrip">
+
+        <form action="/addTrip" method="POST">
+
+            <div class="divForm">
+
+                <label for="txtTitle">Title</label>
+                <p><input class="divFormInput" type="text" name = "title" id="txtTitle"/></p>
+            
+                <label for="txtImageUrl">Image Url</label>
+                <p><input class="divFormInput" type="text" name="imageUrl" id="txtImageUrl" value="https://images.pexels.com/photos/290895/pexels-photo-290895.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"/></p>
+
+                <label for="txtDepartureDate">Departure Date</label>
+                <p><input class="divFormInput" type="text" name="departureDate" id="txtDepartureDate" /></p>
+
+                <label for="txtReturnDate">Return Date</label>
+                <p><input class="divFormInput" type="text" name="returnDate" id="txtReturnDate"/></p>
+
+            </div>
+
+            <div>
+                <input type="submit"/>
+            </div>
+
+        </form>
+    </div>
+
+    <div id="divDisplay">
+        {{#tripList}}
+            <li>{{title}} - Depart: {{departureDate}} Return: {{returnDate}} - Id: {{id}}
+                <div>
+                    <img id="imgTrip" src="{{imageUrl}}">
+                    <form action="/deleteTrip" method="POST">
+                        <input type="hidden" name="id" value="{{id}}"/>
+                        <input type="submit" value="Remove Trip"/>
+                    </form>
+                </div>
+            </li>
+        {{/tripList}}
+    </div>
+
+    
+</body>
+</html>

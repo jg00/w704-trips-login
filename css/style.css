@@ -1,0 +1,20 @@
+body {
+    background-color: pink;
+}
+
+img {
+    max-width:490px;
+    max-height: auto;
+}
+
+@media only screen and (max-width: 490px) {
+    body {
+        background-color: lightblue;
+    }
+
+    img {
+        max-width:100%;
+        max-height: auto;
+    }
+
+}
