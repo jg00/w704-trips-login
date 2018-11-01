@@ -1,6 +1,6 @@
-###### w702-trips-express-mustache
+###### w704-trips-login
 
 ### Repository Notes
-Trips app using express and mustache
+Trips - user login and display specific user trips
 
 
